@@ -1,0 +1,725 @@
+/* ==========================================================================
+   1. CSS PREMENNÉ
+   ========================================================================== */
+:root {
+    --color-text: #222;
+    --color-muted: #777;
+    --color-line: #ccc;
+    --color-border: #888;
+    --color-bg: #fff;
+    --color-soft: #f4f4f4;
+    --color-placeholder: #e6e6e6;
+    --color-busy: #c8c8c8;
+    --color-dark: #444;
+
+    --spacing-s: .5rem;
+    --spacing-m: 1rem;
+    --spacing-l: 1.5rem;
+    --container-width: 1200px;
+}
+
+
+/* ==========================================================================
+   2. ZÁKLADNÉ NASTAVENIA A TYPOGRAFIA
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+h1, h2, h3 {
+    margin: 0 0 var(--spacing-s);
+    line-height: 1.25;
+}
+
+h1 { font-size: clamp(1.6rem, 4vw, 2rem); }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.1rem; }
+
+p {
+    margin: 0 0 .75rem;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.nav-toggle:focus-visible + .nav-burger {
+    outline: 3px solid var(--color-dark);
+    outline-offset: 2px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+    margin: var(--spacing-m) 0;
+}
+
+.container {
+    width: min(var(--container-width), 100%);
+    margin: 0 auto;
+    padding: 0 var(--spacing-m);
+}
+
+.note {
+    font-size: .85rem;
+    color: var(--color-muted);
+}
+
+
+/* ==========================================================================
+   3. SPOLOČNÉ KOMPONENTY
+   ========================================================================== */
+
+/* --- tlačidlá ------------------------------------------------------------ */
+.btn {
+    display: inline-block;
+    padding: .65rem 1rem;
+    border: 1px solid var(--color-text);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.btn:hover {
+    background-color: var(--color-placeholder);
+}
+
+.btn-primary {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+    color: var(--color-bg);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-text);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--spacing-m);
+}
+
+.btn:disabled {
+    background-color: var(--color-placeholder);
+    border-color: var(--color-line);
+    color: var(--color-muted);
+    cursor: not-allowed;
+}
+
+/* --- formuláre ----------------------------------------------------------- */
+label {
+    display: block;
+    margin-bottom: var(--spacing-m);
+    font-size: .85rem;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin-top: .3rem;
+    padding: .55rem .6rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    font: inherit;
+    font-weight: normal;
+}
+
+textarea:disabled {
+    background-color: var(--color-placeholder);
+    color: var(--color-muted);
+}
+
+/* --- karty --------------------------------------------------------------- */
+.card {
+    margin-bottom: var(--spacing-l);
+    padding: var(--spacing-m);
+    border: 1px solid var(--color-line);
+    background-color: var(--color-bg);
+}
+
+.card-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--spacing-s);
+}
+
+/* --- tabuľky ------------------------------------------------------------- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: .5rem;
+    text-align: left;
+}
+
+/* --- zástupný obrázok (placeholder) -------------------------------------- */
+.photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: var(--spacing-s);
+    border: 1px solid var(--color-line);
+    background-color: var(--color-placeholder);
+    color: #666;
+    font-size: .9rem;
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   4. ROZLOŽENIE STRÁNKY
+   ========================================================================== */
+
+/* --- hlavička ------------------------------------------------------------ */
+.site-header {
+    border-bottom: 1px solid var(--color-line);
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-s) var(--spacing-l);
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
+}
+
+.brand {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: .75rem;
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--color-text);
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* --- navigačné menu (na mobile skryté, otvára sa checkboxom) ------------- */
+.nav-toggle {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+.nav-burger {
+    margin: 0;
+    padding: .4rem .8rem;
+    border: 1px solid var(--color-text);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.main-nav {
+    display: none;
+    flex-basis: 100%;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        display: block;
+        padding: .6rem 0;
+        border-top: 1px solid var(--color-line);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a[aria-current] {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .muted {
+        color: var(--color-muted);
+    }
+}
+
+.nav-toggle:checked ~ .main-nav {
+    display: block;
+}
+
+/* --- používateľ ---------------------------------------------------------- */
+.user-box {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    font-size: .95rem;
+
+    .note {
+        margin: 0;
+    }
+}
+
+/* --- hlavný obsah -------------------------------------------------------- */
+.site-main {
+    flex: 1;
+    padding-top: var(--spacing-l);
+    padding-bottom: 2rem;
+}
+
+.content-label {
+    margin-bottom: var(--spacing-s);
+    font-weight: bold;
+}
+
+.content-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45vh;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-placeholder);
+    color: #666;
+
+    h1 {
+        margin: 0;
+        font-weight: normal;
+    }
+}
+
+/* --- pätička ------------------------------------------------------------- */
+.site-footer {
+    border-top: 1px solid var(--color-line);
+    background-color: var(--color-soft);
+    font-size: .9rem;
+    color: var(--color-dark);
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+
+    p {
+        margin: 0;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-s) var(--spacing-l);
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+/* --- rozloženie: tablet a väčšie (od 768 px) ----------------------------- */
+@media (min-width: 768px) {
+    .nav-burger {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
+        flex: 1;
+        flex-basis: auto;
+
+        ul {
+            flex-direction: row;
+            gap: var(--spacing-l);
+        }
+
+        a {
+            padding: .25rem 0;
+            border-top: 0;
+        }
+    }
+
+    .brand {
+        flex: none;
+    }
+
+    .user-box {
+        flex-basis: auto;
+        text-align: right;
+    }
+
+    .content-placeholder {
+        min-height: 60vh;
+        font-size: 1.5rem;
+    }
+
+    .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+/* ==========================================================================
+   5. STRÁNKA: DETAIL VYBAVENIA
+   ========================================================================== */
+
+/* --- 5.1 omrvinková navigácia -------------------------------------------- */
+.breadcrumb {
+    margin-bottom: var(--spacing-m);
+    font-size: .9rem;
+    color: var(--color-dark);
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li + li::before {
+        content: "/";
+        margin: 0 .5rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+/* --- 5.2 rozloženie stránky (grid) --------------------------------------- */
+.detail-layout {
+    display: grid;
+    gap: var(--spacing-l);
+    align-items: start;
+}
+
+.detail-main,
+.detail-side {
+    min-width: 0;
+}
+
+.detail-meta {
+    color: var(--color-dark);
+}
+
+/* --- 5.3 fotografie ------------------------------------------------------ */
+.photo-main {
+    aspect-ratio: 16 / 8;
+    margin-bottom: .75rem;
+}
+
+.photo-thumbs {
+    display: flex;
+    gap: var(--spacing-s);
+    margin-bottom: var(--spacing-l);
+
+    .photo {
+        flex: 1;
+        min-width: 0;
+        aspect-ratio: 3 / 1.5;
+        overflow: hidden;
+        font-size: .7rem;
+    }
+}
+
+/* --- 5.4 parametre vybavenia --------------------------------------------- */
+.params {
+    margin-bottom: var(--spacing-l);
+    border: 1px solid var(--color-line);
+
+    th {
+        width: 50%;
+        font-weight: normal;
+        color: var(--color-muted);
+    }
+
+    td {
+        font-weight: bold;
+    }
+
+    th, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr + tr {
+        border-top: 1px solid var(--color-line);
+    }
+}
+
+/* --- 5.5 kalendár dostupnosti -------------------------------------------- */
+.cal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--spacing-s) 0;
+
+    button {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid var(--color-text);
+        background-color: var(--color-bg);
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+}
+
+.calendar {
+    th {
+        padding: .25rem 0;
+        font-size: .85rem;
+        font-weight: normal;
+        text-align: center;
+        color: var(--color-muted);
+    }
+
+    td {
+        padding: .4rem 0;
+        border: 1px solid var(--color-line);
+        text-align: center;
+    }
+
+    .blank {
+        border: 0;
+    }
+
+    .busy {
+        background-color: var(--color-busy);
+        text-decoration: line-through;
+    }
+
+    .selected {
+        background-color: var(--color-dark);
+        border-color: var(--color-dark);
+        color: var(--color-bg);
+        font-weight: bold;
+    }
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.25rem;
+    margin: .75rem 0 var(--spacing-s);
+    font-size: .85rem;
+}
+
+.legend-box {
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    margin-right: .35rem;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-bg);
+}
+
+.legend-box.busy {
+    background-color: var(--color-busy);
+}
+
+.legend-box.selected {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+/* --- 5.6 rezervácia ------------------------------------------------------ */
+.price {
+    margin-bottom: 0;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 .75rem;
+
+    label {
+        flex: 1 1 8rem;
+    }
+}
+
+.status-ok {
+    margin-bottom: var(--spacing-m);
+    padding: .75rem;
+    border: 1px solid #999;
+    background-color: var(--color-soft);
+    font-size: .85rem;
+
+    strong {
+        display: block;
+        font-size: .95rem;
+    }
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--spacing-s);
+}
+
+.price-total {
+    padding-top: .75rem;
+    border-top: 1px solid var(--color-line);
+    margin-bottom: var(--spacing-m);
+    font-weight: bold;
+
+    strong {
+        font-size: 1.75rem;
+    }
+}
+
+/* --- 5.7 počasie --------------------------------------------------------- */
+.weather {
+    th {
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    td:last-child {
+        text-align: right;
+    }
+
+    tr {
+        border-bottom: 1px solid var(--color-line);
+    }
+}
+
+/* --- 5.8 recenzie -------------------------------------------------------- */
+.reviews {
+    padding-top: var(--spacing-l);
+    border-top: 1px solid var(--color-line);
+}
+
+.reviews-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--spacing-s);
+    margin-bottom: var(--spacing-m);
+    font-weight: bold;
+}
+
+.reviews-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
+
+    > * {
+        flex: 1 1 16rem;
+        min-width: 0;
+        margin: 0;
+    }
+}
+
+.review {
+    padding: var(--spacing-m);
+    border: 1px solid var(--color-line);
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--spacing-s);
+    }
+
+    time {
+        display: block;
+        margin-bottom: var(--spacing-s);
+        font-size: .85rem;
+        color: var(--color-muted);
+    }
+}
+
+.review-form {
+    background-color: var(--color-soft);
+
+    .btn {
+        margin-top: var(--spacing-s);
+    }
+}
+
+.stars {
+    font-size: 1.3rem;
+    color: var(--color-muted);
+}
+
+/* --- detail vybavenia: 576 px a viac ------------------------------------- */
+@media (min-width: 576px) {
+    .params {
+        tr {
+            display: flex;
+        }
+
+        th, td {
+            display: table-cell;
+            flex: 1;
+        }
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .calendar td {
+        padding: .5rem 0;
+    }
+}
+
+/* --- detail vybavenia: 992 px a viac (dva stĺpce) ------------------------ */
+@media (min-width: 992px) {
+    .detail-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}

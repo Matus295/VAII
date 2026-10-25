@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="sk-SK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GearRent – požičovňa športového vybavenia">
+    <meta name="author" content="Matúš Remeň">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Trek Marlin 7 – GearRent</title>
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="layout.html">
+            <span class="logo" aria-hidden="true">GR</span>
+            <span class="brand-name">GearRent</span>
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Zobraziť alebo skryť menu">
+        <label for="nav-toggle" class="nav-burger">&#9776; Menu</label>
+        <nav class="main-nav" aria-label="Hlavné menu">
+            <ul>
+                <li><a href="layout.html">Domov</a></li>
+                <li><a href="detail.html" aria-current="page">Katalóg vybavenia</a></li>
+                <li><a href="layout.html">Moje rezervácie</a></li>
+                <li><a href="layout.html" class="muted" title="Len pre správcu">Admin</a></li>
+            </ul>
+        </nav>
+        <div class="user-box">
+            <strong>Jana Nováková &#9662;</strong>
+            <span class="note">Zákazník &middot; Môj profil &middot; <a href="layout.html">Odhlásiť sa</a></span>
+        </div>
+    </div>
+</header>
+<main class="container site-main">
+    <nav class="breadcrumb" aria-label="Omrvinková navigácia">
+        <ol>
+            <li><a href="layout.html">Domov</a></li>
+            <li><a href="detail.html">Katalóg vybavenia</a></li>
+            <li><a href="detail.html">Bicykle</a></li>
+            <li>Trek Marlin 7</li>
+        </ol>
+    </nav>
+
+    <div class="detail-layout">
+        <!-- ľavý stĺpec: informácie o vybavení -->
+        <article class="detail-main">
+            <h1>Trek Marlin 7</h1>
+            <p class="detail-meta">Horský bicykel &middot; &#9733; 4,6 / 5 &middot; 12 recenzií</p>
+
+            <figure class="photo photo-main">
+                <figcaption>Hlavná fotografia vybavenia</figcaption>
+            </figure>
+            <div class="photo-thumbs">
+                <figure class="photo"><figcaption>Celkový pohľad</figcaption></figure>
+                <figure class="photo"><figcaption>Detail rámu</figcaption></figure>
+                <figure class="photo"><figcaption>Výbava bicykla</figcaption></figure>
+            </div>
+
+            <section>
+                <h2>O vybavení</h2>
+                <p>Univerzálny horský bicykel na lesné cesty aj celodenné výlety. Ľahký hliníkový rám, odpružená vidlica a hydraulické kotúčové brzdy.</p>
+                <table class="params">
+                    <tbody>
+                        <tr>
+                            <th>Veľkosť rámu</th>
+                            <td>M</td>
+                        </tr>
+                        <tr>
+                            <th>Priemer kolies</th>
+                            <td>29&Prime;</td>
+                        </tr>
+                        <tr>
+                            <th>Súčasť prenájmu</th>
+                            <td>Prilba a zámok</td>
+                        </tr>
+                        <tr>
+                            <th>Miesto prevzatia</th>
+                            <td>Žilina</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <h2>Dostupnosť vybavenia</h2>
+                    <span class="note">Vyberte termín prenájmu</span>
+                </div>
+                <div class="cal-nav">
+                    <button type="button" aria-label="Predchádzajúci mesiac">&lsaquo;</button>
+                    <strong>Október 2026</strong>
+                    <button type="button" aria-label="Nasledujúci mesiac">&rsaquo;</button>
+                </div>
+                <table class="calendar">
+                    <caption class="note">Kalendár obsadenosti na október 2026</caption>
+                    <thead>
+                        <tr>
+                            <th>Po</th>
+                            <th>Ut</th>
+                            <th>St</th>
+                            <th>Št</th>
+                            <th>Pi</th>
+                            <th>So</th>
+                            <th>Ne</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="blank"></td>
+                            <td class="blank"></td>
+                            <td class="blank"></td>
+                            <td title="voľné">1</td>
+                            <td title="voľné">2</td>
+                            <td title="voľné">3</td>
+                            <td title="voľné">4</td>
+                        </tr>
+                        <tr>
+                            <td title="voľné">5</td>
+                            <td title="voľné">6</td>
+                            <td title="voľné">7</td>
+                            <td title="voľné">8</td>
+                            <td title="voľné">9</td>
+                            <td title="voľné">10</td>
+                            <td title="voľné">11</td>
+                        </tr>
+                        <tr>
+                            <td title="voľné">12</td>
+                            <td title="voľné">13</td>
+                            <td title="voľné">14</td>
+                            <td title="voľné">15</td>
+                            <td title="voľné">16</td>
+                            <td title="voľné">17</td>
+                            <td title="voľné">18</td>
+                        </tr>
+                        <tr>
+                            <td class="busy" title="obsadené">19</td>
+                            <td class="busy" title="obsadené">20</td>
+                            <td class="busy" title="obsadené">21</td>
+                            <td title="voľné">22</td>
+                            <td class="selected" title="vybrané">23</td>
+                            <td class="selected" title="vybrané">24</td>
+                            <td class="selected" title="vybrané">25</td>
+                        </tr>
+                        <tr>
+                            <td title="voľné">26</td>
+                            <td class="busy" title="obsadené">27</td>
+                            <td class="busy" title="obsadené">28</td>
+                            <td class="busy" title="obsadené">29</td>
+                            <td title="voľné">30</td>
+                            <td title="voľné">31</td>
+                            <td class="blank"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="legend">
+                    <li><span class="legend-box"></span>Voľné</li>
+                    <li><span class="legend-box busy"></span>Obsadené</li>
+                    <li><span class="legend-box selected"></span>Vybrané &middot; voľné</li>
+                </ul>
+                <p class="note">Obsadené: 19.&ndash;21. a 27.&ndash;29. 10. &middot; Vybrané: 23.&ndash;25. 10. vrátane</p>
+            </section>
+        </article>
+
+        <!-- pravý stĺpec: rezervácia a počasie -->
+        <div class="detail-side">
+            <section class="card">
+                <h2>Rezervácia vybavenia</h2>
+                <p class="price">18&nbsp;&euro; / deň</p>
+                <p class="note">Trek Marlin 7 &middot; veľkosť M</p>
+                <form action="#">
+                    <div class="form-row">
+                        <label>Dátum od (vrátane)
+                            <input type="date" value="2026-10-23">
+                        </label>
+                        <label>Dátum do (vrátane)
+                            <input type="date" value="2026-10-25">
+                        </label>
+                    </div>
+                    <label>Poznámka (nepovinné)
+                        <textarea rows="3" placeholder="Napr. čas vyzdvihnutia alebo otázka…"></textarea>
+                    </label>
+                    <div class="status-ok" role="status">
+                        <strong>&#10003; Voľné v zvolenom termíne</strong>
+                        23.&ndash;25. 10. 2026 &middot; 3 dni vrátane začiatku a konca. Dostupnosť sa overuje pri zmene dátumov.
+                    </div>
+                    <p class="price-row"><span>3 dni &times; 18&nbsp;&euro; / deň</span><span>54&nbsp;&euro;</span></p>
+                    <p class="price-row price-total"><span>Celková cena</span><strong>54&nbsp;&euro;</strong></p>
+                    <button type="submit" class="btn btn-primary btn-block">Rezervovať</button>
+                </form>
+                <p class="note">Po odoslaní čaká rezervácia na schválenie správcom. Prevzatie a vrátenie: Žilina.</p>
+                <hr>
+                <p class="note">Rezervovať môže iba prihlásený zákazník.<br>Pri prekrývaní termínov alebo údržbe je rezervácia zablokovaná.</p>
+            </section>
+
+            <section class="card">
+                <h2>Počasie &middot; Žilina</h2>
+                <p class="note">Ilustračná predpoveď &middot; nejde o živé údaje</p>
+                <table class="weather">
+                    <tbody>
+                        <tr>
+                            <th>Pi 23. 10.</th>
+                            <td>Polojasno</td>
+                            <td>14 / 7&nbsp;&deg;C</td>
+                        </tr>
+                        <tr>
+                            <th>So 24. 10.</th>
+                            <td>Oblačno</td>
+                            <td>13 / 6&nbsp;&deg;C</td>
+                        </tr>
+                        <tr>
+                            <th>Ne 25. 10.</th>
+                            <td>Slabý dážď</td>
+                            <td>12 / 8&nbsp;&deg;C</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">Teplota cez deň / v noci. Pred výletom si overte aktuálne počasie.</p>
+            </section>
+        </div>
+    </div>
+
+    <section class="reviews">
+        <div class="reviews-header">
+            <h2>Recenzie zákazníkov</h2>
+            <span>&#9733; 4,6 / 5 &middot; 12 recenzií</span>
+        </div>
+        <div class="reviews-list">
+            <article class="review">
+                <header>
+                    <strong>Martin K.</strong>
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733; &middot; 5 / 5</span>
+                </header>
+                <time datetime="2026-10-12">12. 10. 2026</time>
+                <p>Bicykel bol pripravený načas a vo výbornom stave. Na lesných cestách jazdil skvele.</p>
+            </article>
+            <article class="review">
+                <header>
+                    <strong>Petra M.</strong>
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9734; &middot; 4 / 5</span>
+                </header>
+                <time datetime="2026-10-05">5. 10. 2026</time>
+                <p>Pohodlný bicykel na víkendový výlet. Oceňujem prilbu aj zámok v cene prenájmu.</p>
+            </article>
+            <form class="card review-form" action="#">
+                <h3>Pridať recenziu</h3>
+                <p class="note">Hodnotenie je možné až po vrátení vybavenia.</p>
+                <p class="stars" aria-label="Hodnotenie 0 z 5">&#9734; &#9734; &#9734; &#9734; &#9734;</p>
+                <textarea rows="3" placeholder="Vaša skúsenosť s vybavením…" aria-label="Text recenzie" disabled></textarea>
+                <button type="submit" class="btn" disabled>Odoslať recenziu</button>
+            </form>
+        </div>
+        <a class="btn" href="#">Zobraziť všetky recenzie (12)</a>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>&copy; 2026 GearRent &middot; Požičovňa športového vybavenia</p>
+        <ul>
+            <li><a href="layout.html">Kontakt</a></li>
+            <li><a href="layout.html">Podmienky prenájmu</a></li>
+            <li><a href="layout.html">Ochrana osobných údajov</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
